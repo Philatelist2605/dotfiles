@@ -268,6 +268,8 @@
           let g:go_metalinter_autosave = 0
           let g:go_imports_autosave = 1
 
+          let g:go_fmt_fail_silently = 1
+
           " Enable highlighting
           let g:go_highlight_structs = 1
           let g:go_highlight_interfaces = 1
