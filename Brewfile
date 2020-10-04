@@ -21,8 +21,6 @@ cask "appcleaner"
 cask "backblaze"
 cask "dropbox"
 cask "encryptme"
-cask "firefox-developer-edition"
-cask "font-courier-prime-medium-and-semi-bold"
 cask "font-jetbrains-mono"
 cask "kitty"
 cask "onyx"
@@ -32,6 +30,8 @@ cask "the-unarchiver"
 cask "transmission"
 cask "vlc"
 cask "zoomus"
+mas "AdGuard for Safari", id: 1440147259
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Save to Pocket", id: 1477385213
