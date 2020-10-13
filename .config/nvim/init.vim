@@ -209,9 +209,8 @@
         if isdirectory(expand("~/.config/nvim/plugged/ale"))
           let g:airline#extensions#ale#enabled = 1
           let g:ale_fix_on_save = 1
-          let g:ale_linters = { "go": ["gofmt", "govet"] }
-          let g:ale_fixers = { "*": ["remove_trailing_lines", "trim_whitespace"], "go": ["gofmt", "goimports"] }
-          " let g:ale_go_goimports_executable = expand("$GOPATH/bin/goimports")
+          let g:ale_linters = { "go": ["govet"] }
+          let g:ale_fixers = { "*": ["remove_trailing_lines", "trim_whitespace"] }
         endif
     " }
 
@@ -262,17 +261,15 @@
 
     " Vim-go {
         if isdirectory(expand("~/.config/nvim/plugged/vim-go"))
-          " Disable autosave functions
-          let g:go_fmt_autosave = 0
+          " Set autosave functions
+          let g:go_fmt_command = "goimports"
+          let g:go_fmt_autosave = 1
           let g:go_mod_fmt_autosave = 0
           let g:go_asmfmt_autosave = 0
           let g:go_metalinter_autosave = 0
-          let g:go_imports_autosave = 1
+          let g:go_imports_autosave = 0
 
-          " Disable go fmt output
-          let g:go_fmt_fail_silently = 1
-
-          " Enable highlighting
+          " Set highlighting and display
           let g:go_highlight_structs = 1
           let g:go_highlight_interfaces = 1
           let g:go_highlight_types = 1
@@ -283,13 +280,8 @@
           let g:go_highlight_extra_types = 1
           let g:go_highlight_build_constraints = 0
           let g:go_highlight_generate_tags = 0
-
-          " let g:go_auto_sameids = 1   " Highlight uses of variable
-          " let g:go_auto_type_info = 1 " Show types in status bar
-          " let g:go_term_enabled = 1
-          " let g:go_term_mode = "vsplit"
-          " let g:go_term_close_on_exit = 0
-          " let g:go_term_reuse = 1
+          let g:go_auto_sameids = 0
+          let g:go_auto_type_info = 0
         endif
     " }
 " }
