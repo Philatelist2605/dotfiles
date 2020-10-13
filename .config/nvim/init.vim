@@ -208,9 +208,10 @@
     " Ale {
         if isdirectory(expand("~/.config/nvim/plugged/ale"))
           let g:airline#extensions#ale#enabled = 1
-          let g:ale_ruby_rubocop_executable = "bin/rubocop"
-          let g:ale_fixers = { "*": ["remove_trailing_lines", "trim_whitespace"], "go": ["gofmt", "goimports"] }
           let g:ale_fix_on_save = 1
+          let g:ale_linters = { "go": ["gofmt", "govet"] }
+          let g:ale_fixers = { "*": ["remove_trailing_lines", "trim_whitespace"], "go": ["gofmt", "goimports"] }
+          " let g:ale_go_goimports_executable = expand("$GOPATH/bin/goimports")
         endif
     " }
 
@@ -244,7 +245,7 @@
 
     " Vim-fzf {
         if isdirectory(expand("~/.config/nvim/plugged/fzf.vim/"))
-          let g:fzf_preview_window = ''
+          command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
           nmap <c-p> :Files<CR>
           nmap <c-f> :Ag<CR>
           nmap <c-n> :Lines<CR>
@@ -268,6 +269,7 @@
           let g:go_metalinter_autosave = 0
           let g:go_imports_autosave = 1
 
+          " Disable go fmt output
           let g:go_fmt_fail_silently = 1
 
           " Enable highlighting
