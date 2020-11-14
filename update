@@ -10,16 +10,9 @@ function app_store_update {
 function brew_update {
   echo "Starting Homebrew Update"
   cd ~
-  brew upgrade
+  brew upgrade --greedy
   brew cleanup
   echo "Finished Homebrew Update\n\n"
-}
-
-function brew_cask_update {
-  echo "Starting Homebrew Cask Update"
-  cd ~
-  brew cu --all --yes --cleanup # https://github.com/buo/homebrew-cask-upgrade
-  echo "Finished Homebrew Cask Update\n\n"
 }
 
 function brew_backup {
@@ -55,7 +48,6 @@ function commit {
 
 app_store_update
 brew_update
-brew_cask_update
 brew_backup
 vim_plugins_update
 zprezto_update
