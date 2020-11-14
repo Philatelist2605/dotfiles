@@ -10,7 +10,6 @@ function app_store_update {
 function brew_update {
   echo "Starting Homebrew Update"
   cd ~
-  brew update
   brew upgrade
   brew cleanup
   echo "Finished Homebrew Update\n\n"
@@ -19,7 +18,6 @@ function brew_update {
 function brew_cask_update {
   echo "Starting Homebrew Cask Update"
   cd ~
-  brew update
   brew cu --all --yes --cleanup # https://github.com/buo/homebrew-cask-upgrade
   echo "Finished Homebrew Cask Update\n\n"
 }
